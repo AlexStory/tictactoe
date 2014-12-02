@@ -258,6 +258,9 @@ table {
   text-align: center;
   width: 330px;
   margin: 10px auto; }
+  @media screen and (max-width: 700px) {
+    table {
+      width: 180px; } }
 
 tr {
   background: #ccc; }
@@ -273,14 +276,24 @@ td {
   background: #fdfdfd; }
   td:last-child {
     margin-right: 0; }
+  @media screen and (max-width: 700px) {
+    td {
+      height: 50px;
+      width: 50px; } }
 
 .x {
   background: url("../img/X.gif");
   background-size: 100px; }
+  @media screen and (max-width: 700px) {
+    .x {
+      background-size: 50px; } }
 
 .o {
   background: url("../img/o.jpg");
   background-size: 100px; }
+  @media screen and (max-width: 700px) {
+    .o {
+      background-size: 50px; } }
 
 .info_box {
   width: 330px;
@@ -292,13 +305,16 @@ td {
   color: #fdfdfd;
   font-size: 2em;
   border-radius: 6px; }
+  @media screen and (max-width: 700px) {
+    .info_box {
+      width: 180px; } }
 
-.begin {
+.begin, .newGame {
   background: #2ecc71;
   border: white 1px solid;
   color: white;
   font-size: 0.5em; }
-  .begin:hover {
+  .begin:hover, .newGame:hover {
     background: white;
     border: #2ecc71 1px solid;
     color: #2ecc71; }

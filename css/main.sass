@@ -19,8 +19,8 @@ table
   text-align: center
   width: 330px
   margin: 10px auto
-  // +outer-container
-
+  +media(max-width 700px)
+    width: 180px
 tr
   background: #ccc
 td
@@ -28,13 +28,19 @@ td
   margin: 5px
   +size(100px)
   background: #fdfdfd
+  +media(max-width 700px)
+    +size(50px)
 .x
   background: url('../img/X.gif')
   background-size: 100px
+  +media(max-width 700px)
+    background-size: 50px
 
 .o
   background: url('../img/o.jpg')
   background-size: 100px
+  +media(max-width 700px)
+    background-size: 50px
 
 .info_box
   width: 330px
@@ -46,8 +52,11 @@ td
   color: #fdfdfd
   font-size: 2em
   border-radius: 6px
+  +media(max-width 700px)
+    width: 180px
 
-.begin
+
+.begin, .newGame
   background: #2ecc71
   border: white 1px solid
   color: white
