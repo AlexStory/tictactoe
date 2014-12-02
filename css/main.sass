@@ -1,0 +1,58 @@
+@import bourbon/bourbon
+@import neat/neat
+@import base/base
+
+body
+  background: #ddd
+  padding-top: 50px
+
+.wrap
+  +outer-container
+  background: #fdfdfd
+  padding: 20px
+  border-radius: 6px
+
+h1
+  text-align: center
+
+table
+  text-align: center
+  width: 330px
+  margin: 10px auto
+  // +outer-container
+
+tr
+  background: #ccc
+td
+  +span-columns(4)
+  margin: 5px
+  +size(100px)
+  background: #fdfdfd
+.x
+  background: url('../img/X.gif')
+  background-size: 100px
+
+.o
+  background: url('../img/o.jpg')
+  background-size: 100px
+
+.info_box
+  width: 330px
+  text-align: center
+  margin: 5px auto
+  background: #2ecc71
+  padding: 15px 0
+  min-height: 70px
+  color: #fdfdfd
+  font-size: 2em
+  border-radius: 6px
+
+.begin
+  background: #2ecc71
+  border: white 1px solid
+  color: white
+  font-size: .5em
+  &:hover
+    background: white
+    border: #2ecc71 1px solid
+    color: #2ecc71
