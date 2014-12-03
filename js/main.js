@@ -10,6 +10,8 @@
   var gameOver;
   var $begin = $('.begin');
   var $infoBox = $('.info_box p');
+  var _turn;
+  var _count;
     function _boardChange(){
       board.on('child_added', function(childSnapshot, prevChildName) {
         var td = '.' + childSnapshot.key();
@@ -29,12 +31,20 @@
       });
     };
 
+    function _setCount(){
+      _turn.on('value', function(data){
+        _count = data.val();
+      })
+    };
+
     function _setVariables(){
       board = myGame.child('board');
       myGame.onDisconnect().remove();
       playerTurn = myGame.child('player');
       _boardChange();
       _playerChange();
+      _turn = myGame.child('turn');
+      _setCount();
     };
 
     $begin.click(function(){
@@ -52,6 +62,7 @@
             myPlayer = 'x';
             myGame.child('player').set('o');
             _setVariables();
+            _turn.set(0);
           }
         })
         if(!found){
@@ -72,13 +83,14 @@
       var spot = $(this).data('cell')
       board.child(spot).set(who);
       var it = who === 'x' ? 'o' : 'x' ;
+      _count ++;
+      _turn.set(_count);
       playerTurn.set(it);
     })
 
     function endGame(lett){
       $infoBox.text(lett.toUpperCase() + "\'s Win! \n New Game?");
       gameOver = true;
-      var $newGame = $('<button>New Game?</button>');
       $begin.show();
     }
 
@@ -108,8 +120,15 @@
         endGame(lett);
       }
     },
+    checkTie : function(){
+        if(_count > 8){
+          $infoBox.text("Tie Game! \n New Game?");
+          gameOver = true;
+          $begin.show();
+        }
+    },
     clearBoard : function(){
-      myGame.remove()
+      myGame.remove();
       $('td').removeClass('x');
       $('td').removeClass('o');
     },
@@ -120,6 +139,7 @@
       tac.checkVertical('x');
       tac.checkHorizontal('o');
       tac.checkHorizontal('x');
+      tac.checkTie();
     }
   }
 })();
