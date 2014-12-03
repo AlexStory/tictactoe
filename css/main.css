@@ -319,4 +319,9 @@ td {
     border: #2ecc71 1px solid;
     color: #2ecc71; }
 
+.newGame {
+  margin: 5px auto;
+  font-size: 1em;
+  display: block; }
+
 /*# sourceMappingURL=main.css.map */
