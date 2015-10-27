@@ -23,7 +23,7 @@
       myGame.remove();
       $('td').removeClass('x');
       $('td').removeClass('o');
-    },
+    }
 
     function _playerChange(){
       playerTurn.on("value", function(snapshot) {
