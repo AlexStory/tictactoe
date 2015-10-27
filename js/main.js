@@ -19,7 +19,7 @@
       })
     };
     
-    clearBoard : function(){
+   function clearBoard(){
       myGame.remove();
       $('td').removeClass('x');
       $('td').removeClass('o');
