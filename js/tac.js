@@ -32,11 +32,6 @@ var tac = (function(){
           $begin.show();
         }
     },
-    clearBoard : function(){
-      myGame.remove();
-      $('td').removeClass('x');
-      $('td').removeClass('o');
-    },
     checkGameOver : function(){
       tac.checkTie();
       tac.checkDiagonal('o');
