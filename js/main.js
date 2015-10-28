@@ -55,7 +55,7 @@
 
     $begin.click(function(){
       if(board){
-        tac.clearBoard();
+        clearBoard();
         gameOver = false;
       }
       game.once('value', function(dataSnapshot){
