@@ -100,7 +100,7 @@
       $begin.show();
     }
     return{
-      count: _count,
+      count: function(){return _count},
       endGame: _endGame
     }
 })();
