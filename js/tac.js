@@ -27,7 +27,7 @@ var tac = (function(){
     },
     checkTie : function(){
         if(main.count() > 8){
-          $infoBox.text("Tie Game! \n New Game?");
+          $('.info_box p').text("Tie Game! \n New Game?");
           gameOver = true;
           $begin.show();
         }
