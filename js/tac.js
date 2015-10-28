@@ -29,7 +29,7 @@ var tac = (function(){
         if(main.count() > 8){
           $('.info_box p').text("Tie Game! \n New Game?");
           gameOver = true;
-          $begin.show();
+          $('.begin').show();
         }
     },
     checkGameOver : function(){
